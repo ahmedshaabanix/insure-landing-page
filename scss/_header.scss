@@ -1,0 +1,78 @@
+.header {
+  padding: 16px 0;
+  .nav {
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint-down(small) {
+      .show {
+        display: none;
+      }
+    }
+    &__menu {
+      @include breakpoint-down(small) {
+        display: block;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 52px;
+        right: 0;
+        padding: 30px;
+        background-color: $DarkViolet;
+        z-index: 3;
+
+        li {
+          padding: 20px;
+          width: 100%;
+          a {
+            color: #fff;
+            font-size: 20px;
+            display: inline-block;
+            width: 100%;
+
+            &.active {
+              border: 1px solid #fff;
+              &:hover {
+                background-color: #fff;
+                color: $VeryDarkViolet;
+              }
+            }
+          }
+        }
+      }
+    }
+    .humberger-menu {
+      cursor: pointer;
+      .close {
+        display: none;
+      }
+      .open {
+        display: block;
+      }
+    }
+    &__item {
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
+    }
+    &__link {
+      padding: 8px 16px;
+      transition: all 0.2s ease-in-out;
+      color: $DarkGrayishViolet;
+      text-transform: uppercase;
+      &:hover {
+        @include breakpoint-up(medium) {
+          color: $VeryDarkViolet;
+        }
+      }
+    }
+    .active {
+      border: 2px solid $VeryDarkViolet;
+      &:hover {
+        background-color: $VeryDarkViolet;
+        color: $VeryLightGray;
+      }
+    }
+  }
+}
